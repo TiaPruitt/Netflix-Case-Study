@@ -1,3 +1,8 @@
+
+--Selecting the columns 
+--Remove all leading and trailing spaces from text strings
+
+
 AlLcountries =
 UNION(
 SELECTCOLUMNS (netflix_titles, "Country", TRIM(UPPER(netflix_titles[Country •1]))),
