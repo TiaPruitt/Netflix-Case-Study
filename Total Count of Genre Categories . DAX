@@ -1,0 +1,18 @@
+
+
+TV_Movie_Genre_Counts =
+VAR CombinedGenres =
+FILTER(
+   UNION(
+         SELECTCOLUMNS (netflix_titles, "Category", TRIM(UPPER(netflix_titles [Category.1]))),
+         SELECTCOLUMNS (netflix_titles, "Category", TRIM(UPPER(netflix_titles[Category.2]))),
+         SELECTCOLUMNS (netflix_titles, "Category", TRIM(UPPER(netflix_titles[Category.3])))
+   ),
+   NOT ISBLANK ([Category])
+)
+RETURN
+    SUMMARIZE(
+       CombinedGenres,
+[Category], 
+"Total Count", COUNTROWS(FILTER(CombinedGenres, [Category] = EARLIER ([Category])))
+)
