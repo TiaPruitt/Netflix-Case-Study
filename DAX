@@ -1,0 +1,9 @@
+AlLcountries =
+UNION(
+SELECTCOLUMNS (netflix_titles, "Country", TRIM(UPPER(netflix_titles[Country •1]))),
+SELECTCOLUMNS (netflix_titles, "Country", TRIM(UPPER(netflix_titles[Country •2]))),
+SELECTCOLUMNS (netflix titles, "Country", TRIM(UPPER(netflix_titles[Country .3]))),
+SELECTCOLUMNS (netflix_titles, "Country", TRIM(UPPER(netflix_titles[Country .4]))),
+SELECTCOLUMNS (netflix titles, "Country", TRIM(UPPER(netflix_titles[Country .5]))),
+SELECTCOLUMNS (netflix_titles, "Country", TRIM(UPPER(netflix_titles[Country -6])))
+)
